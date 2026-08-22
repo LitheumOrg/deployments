@@ -23,15 +23,19 @@ Addresses are `0x`-prefixed; `*-hash` values are bare hex.
 
 ## `LITHEUM_NETWORK`
 
-Consumers resolve the active network from `LITHEUM_NETWORK` (a directory name under
-`deployments/`):
+The active network is a directory name under `deployments/` selected by
+`LITHEUM_NETWORK`:
 
 ```bash
 export LITHEUM_NETWORK=local     # -> deployments/local/
 ```
 
-Required. Scripts, the wasm build, and gateway/declaw config generation fail loudly
-if it is unset or the directory is missing — no zero-address fallbacks.
+- **Reading** (wasm build, gateway/declaw config, TUI): `LITHEUM_NETWORK` is
+  optional and **defaults to `mainnet`** when unset. Only fails if the resolved
+  network directory is missing — no zero-address fallbacks.
+- **Writing** (deploy scripts): `LITHEUM_NETWORK` is **required** and scripts fail
+  loudly if it is unset. Creating deployment artifacts must be explicit about the
+  target network.
 
 ## Setup
 
