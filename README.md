@@ -14,12 +14,12 @@ deployments/<network>/
   servicemarketplace        # contract address, 0x… (42 chars)
   dappstore                 # contract address, 0x…
   dappstore.abi / idapp.abi # ABI JSON
-  dequic-service-address    # 0x…
-  declaw-service-address    # 0x…
+  demsg-url                 # DeMSG public API URL, e.g. https://example.com
+  genesisaddress            # 0x… genesis node address (scripts/save-genesis-address)
   <name>-hash               # content hash, bare hex (no 0x)
 ```
 
-Addresses are `0x`-prefixed; `*-hash` values are bare hex.
+Addresses are `0x`-prefixed; `*-hash` values are bare hex; URLs have no trailing slash.
 
 ## `LITHEUM_NETWORK`
 
